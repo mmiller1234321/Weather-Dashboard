@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Forecast</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <!--Bootstrap CSS link-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
     <!--personal CSS link-->
-    <link rel="stylesheet" href="assets/style.css" />
-</head>
+    <link rel="stylesheet" href="Assets/style.css" />
+
+    <!--dayjs link-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Weather Forecast</title>
+  </head>
+
 <body>
     <!--main header on top of page-->
     <header>
@@ -20,25 +30,33 @@
         <div class="content-child" id="history-container">
             <h2> Search for a City: </h2> 
                 <!--form for user input-->
-                <form id="searchForm">
-                    <input type="text" id="searchInput" value="San Diego"><br>
+                <form>
+                    <input type="text" id="searchForm"  value="San Diego"><br>
                 </form>
             <!--blue search button place-->
             <button id="searchBtn">Search</button>
-            <!--section specifically for past search buttons-->
-            <div class="pastSearches"></div>
+            <!--section spefically for past search buttons-->
+            <div class="pastSearches">
+
+            </div>
         </div>
     
         <!--div for weather information-->
         <div class="content-child" id="weather-container">
             <!--where weather content is actually rendered to-->
-            <div id="fiveDayForecast"></div>
+            <div id="fiveDayForecast">
+                
+                
+            </div>
+
         </div>
 
     </div>
-    <!--bootstrap script link-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!--personal js link-->
-    <script src="./assets/script.js"></script>
+<!--bootstrap script link-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<!--personal js link-->
+<script src="Assets/script.js"></script>
+
 </body>
+
 </html>
