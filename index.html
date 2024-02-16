@@ -1,62 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <!--Bootstrap CSS link-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
-    <!--personal CSS link-->
-    <link rel="stylesheet" href="assets/css/style.css" />
-
-    <!--dayjs link-->
-    <script
-      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
-      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
-      crossorigin="anonymous"
-    ></script>
-
-    <title>Weather Forecast</title>
-  </head>
-
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="Assets/style.css">
+</head>
 <body>
-    <!--main header on top of page-->
-    <header>
-        <h1>Weather Dashboard</h1>
-    </header>
-    <!--div for everything under the header-->
-    <div id="content-box"> 
-        <!--container for all buttons and user input form-->
-        <div class="content-child" id="history-container">
-            <h2> Search for a City: </h2> 
-                <!--form for user input-->
-                <form>
-                    <input type="text" id="searchForm"  value="San Diego"><br>
-                </form>
-            <!--blue search button place-->
-            <button id="searchBtn">Search</button>
-            <!--section spefically for past search buttons-->
-            <div class="pastSearches">
-
-            </div>
-        </div>
-    
-        <!--div for weather information-->
-        <div class="content-child" id="weather-container">
-            <!--where weather content is actually rendered to-->
-            <div id="fiveDayForecast">
-                
-                
-            </div>
-
-        </div>
-
+  <header>
+    <h1>Weather Dashboard</h1>
+  </header>
+  <div class="container">
+    <div class="search-container">
+      <h2>Search for a City:</h2>
+      <form id="searchForm">
+        <input type="text" id="cityInput" placeholder="Enter a city name">
+        <button type="submit">Search</button>
+      </form>
+      <div class="past-searches" id="pastSearches">
+        <!-- Past search buttons will be added here dynamically -->
+      </div>
     </div>
-<!--bootstrap script link-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-<!--personal js link-->
-<script src="./assets/js/javascript.js"></script>
-
+    <div id="weather-container">
+      <div id="currentWeather">
+        <!-- Current weather information will be added here dynamically -->
+      </div>
+      <div id="fiveDayForecast">
+        <!-- 5-day forecast information will be added here dynamically -->
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p>© 2024 Weather Dashboard. All rights reserved.</p>
+  </footer>
+  <script src="Assets/index.js"></script>
 </body>
-
 </html>
+
