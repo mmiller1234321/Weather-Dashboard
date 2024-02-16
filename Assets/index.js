@@ -1,33 +1,49 @@
-function getWeatherData(city) {
-    const apiKey = 'd51e3d6f7fd1ae72f7ad89ee634c35f2'; // Replace with your actual API key
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+var searchformEl = document.querySelector('#searchForm');
+var currentDay = document.querySelector('#weather-container');
+var historyEl = document.querySelector('.pastSearches');
 
-    fetch(apiUrl)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            renderWeatherData(data);
-        })
-        .catch(error => {
-            console.error('Error fetching weather data:', error);
-        });
+var loadHistory = function() {
+    var city = localStorage.getItem('city');
+    if (city) {
+        var cityEl = document.createElement('button');
+        cityEl.textContent = city;
+        cityEl.addEventListener('click', prevSearchLoad); 
+        historyEl.appendChild(cityEl);
+    }
 }
 
-function renderWeatherData(data) {
-    // Log weather data to the console
-    console.log(data);
-}
-
-document.getElementById('searchForm').addEventListener('submit', function(event) {
+var prevSearchLoad = function(event) {
     event.preventDefault();
-    const city = document.getElementById('cityInput').value.trim();
-    if (city !== '') {
-        getWeatherData(city);
+    var pastCity = event.target.textContent;
+    getWeather(pastCity);
+}
+
+var formSubmission = function(event) {
+    event.preventDefault();
+    var city = document.querySelector('#cityInput').value.trim();
+    if (city) {
+        getWeather(city);
     } else {
         alert('Please enter a city name');
     }
-});
+}
+
+var getWeather = function(city) {
+    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=d51e3d6f7fd1ae72f7ad89ee634c35f2&units=imperial`)
+    .then(function(response) {
+        if (response.ok) {
+            response.json().then(function(weather) {
+                displayWeather(weather);
+            });
+        } else {
+            alert('Error: ' + response.statusText);
+        }
+    });
+}
+
+var displayWeather = function(weather) {
+    // Your display logic here
+}
+
+searchformEl.addEventListener('submit', formSubmission);
+loadHistory();

@@ -1,39 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Weather Dashboard</title>
-  <link rel="stylesheet" href="Assets/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="Assets/style.css">
 </head>
 <body>
-  <header>
-    <h1>Weather Dashboard</h1>
-  </header>
-  <div class="container">
-    <div class="search-container">
-      <h2>Search for a City:</h2>
-      <form id="searchForm">
-        <input type="text" id="cityInput" placeholder="Enter a city name">
-        <button type="submit">Search</button>
-      </form>
-      <div class="past-searches" id="pastSearches">
-        <!-- Past search buttons will be added here dynamically -->
-      </div>
+    <header>
+        <h1>Weather Dashboard</h1>
+    </header>
+    <div class="container">
+        <div class="search-container">
+            <h2>Search for a City:</h2>
+            <form id="searchForm">
+                <input type="text" id="cityInput" placeholder="Enter a city name">
+                <button type="submit" id="searchBtn">Search</button>
+            </form>
+            <div class="past-searches" id="pastSearches"></div>
+        </div>
+        <div id="weather-container"></div>
+        <div id="fiveDayForecast"></div>
     </div>
-    <div id="weather-container">
-      <div id="currentWeather">
-        <!-- Current weather information will be added here dynamically -->
-      </div>
-      <div id="fiveDayForecast">
-        <!-- 5-day forecast information will be added here dynamically -->
-      </div>
-    </div>
-  </div>
-  <footer>
-    <p>© 2024 Weather Dashboard. All rights reserved.</p>
-  </footer>
-  <script src="Assets/index.js"></script>
+    <footer>
+        <p>© 2024 Weather Dashboard. All rights reserved.</p>
+    </footer>
+    <script src="Assets/script.js"></script>
 </body>
 </html>
-
