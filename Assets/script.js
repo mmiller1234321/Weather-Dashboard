@@ -1,3 +1,4 @@
+
 //geocord base link
 //http://api.openweathermap.org/geo/1.0/direct?q={city name}&limit={1}&appid={d5d879a5a7dac48b5c30575d2453e07b}
 //5day api base link
@@ -127,7 +128,7 @@ var displayWeather = function(weather){
     //creates div element for current day weather
     var currentWeatherEl = document.createElement('div');
     //bootstrap classes that adds card component, background color light, and dark text color
-    currentWeatherEl.classList = 'card bg-white text-dark d-flex flex-column align-items-center';
+    currentWeatherEl.classList = 'card bg-white text-dark d-flex flex-column align-items-start';
     //creates h3 where you find the city, country, date
     var currentHeaderEl = document.createElement('h3');
     currentHeaderEl.textContent = currentCity + ", " + currentCountry + " (" + currentDate + ")";
